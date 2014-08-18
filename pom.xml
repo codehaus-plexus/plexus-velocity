@@ -27,10 +27,10 @@ limitations under the License.
   <version>1.1.10-SNAPSHOT</version>
 
   <name>Plexus Velocity Component</name>
+
   <scm>
-    <connection>scm:svn:http://svn.codehaus.org/plexus/plexus-components/trunk/plexus-velocity</connection>
-    <developerConnection>scm:svn:https://svn.codehaus.org/plexus/plexus-components/trunk/plexus-velocity</developerConnection>
-    <url>http://fisheye.codehaus.org/browse/plexus/plexus-components/trunk/plexus-velocity</url>
+    <connection>scn:git:git@github.com:sonatype/plexus-velocity.git</connection>
+    <developerConnection>scn:git:git@github.com:sonatype/plexus-velocity.git</developerConnection>
   </scm>
 
   <dependencies>
