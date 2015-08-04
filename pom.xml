@@ -29,8 +29,8 @@ limitations under the License.
   <name>Plexus Velocity Component</name>
 
   <scm>
-    <connection>scn:git:git@github.com:sonatype/plexus-velocity.git</connection>
-    <developerConnection>scn:git:git@github.com:sonatype/plexus-velocity.git</developerConnection>
+    <connection>scm:git:git@github.com:sonatype/plexus-velocity.git</connection>
+    <developerConnection>scm:git:git@github.com:sonatype/plexus-velocity.git</developerConnection>
   </scm>
 
   <dependencies>
