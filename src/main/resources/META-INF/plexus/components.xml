@@ -30,6 +30,10 @@
             <name>resource.manager.logwhenfound</name>
             <value>false</value>
           </property>
+          <property>
+            <name>eventhandler.include.class</name>
+            <value>org.apache.velocity.app.event.implement.IncludeRelativePath</value>
+          </property>
         </properties>
       </configuration>
     </component>
