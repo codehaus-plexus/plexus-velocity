@@ -19,11 +19,18 @@ package org.codehaus.plexus.velocity;
 import java.io.InputStream;
 
 import org.apache.velocity.runtime.resource.Resource;
+import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.apache.velocity.runtime.resource.loader.ResourceLoader;
 import org.apache.velocity.exception.ResourceNotFoundException;
 
 import org.apache.commons.collections.ExtendedProperties;
 
+/**
+ *
+ * @deprecated use {@link ClasspathResourceLoader}
+ *
+ */
+@Deprecated
 public class ContextClassLoaderResourceLoader
     extends ResourceLoader
 {
@@ -35,13 +42,13 @@ public class ContextClassLoaderResourceLoader
         throws ResourceNotFoundException
     {
         InputStream result = null;
-        
+
         if (name == null || name.length() == 0)
         {
             throw new ResourceNotFoundException ("No template name provided");
         }
-        
-        try 
+
+        try
         {
             ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 
@@ -56,10 +63,10 @@ public class ContextClassLoaderResourceLoader
         {
             throw new ResourceNotFoundException( fnfe.getMessage() );
         }
-        
+
         return result;
     }
-    
+
     public boolean isSourceModified(Resource resource)
     {
         return false;

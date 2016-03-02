@@ -17,6 +17,7 @@ package org.codehaus.plexus.velocity;
  */
 
 import org.apache.commons.collections.ExtendedProperties;
+import org.apache.velocity.runtime.resource.loader.FileResourceLoader;
 import org.apache.velocity.runtime.resource.loader.ResourceLoader;
 import org.apache.velocity.exception.ResourceNotFoundException;
 
@@ -31,7 +32,9 @@ import java.io.FileNotFoundException;
  * by Velocity you can use this resource loader.
  *
  * @author Jason van Zyl
+ * @deprecated use {@link FileResourceLoader}
  */
+@Deprecated
 public class SiteResourceLoader
     extends ResourceLoader
 {
