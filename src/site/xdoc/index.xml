@@ -8,18 +8,18 @@
       <p>A component which provide velocity rendering.</p>
       <br/>
       <subsection name="Typical use">
-        <p>A typical use :
+        <p>A typical use:
         <source>
 VelocityContext context = new VelocityContext();        
 VelocityComponent velocityComponent =  (DefaultVelocityComponent) lookup( VelocityComponent.ROLE );
-Template template = velocity.getEngine().getTemplate("path to your template" );
+Template template = velocity.getEngine().getTemplate( "path to your template" );
 StringWriter writer = new StringWriter();
 template.merge( context, writer );
         </source>
         </p>
       </subsection>
       <subsection name="Typical Configuration">
-        <p>A typical component configuration :
+        <p>A typical component configuration:
         <source>
 <![CDATA[
     <component>

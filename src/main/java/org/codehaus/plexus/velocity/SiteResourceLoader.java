@@ -27,8 +27,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 /**
- * Alloww you to dynamically add resources that you want to be processed by Velocity. For
- * example if you want ot generate a site and pull in some random files to be interpolated
+ * Allows you to dynamically add resources that you want to be processed by Velocity. For
+ * example if you want to generate a site and pull in some random files to be interpolated
  * by Velocity you can use this resource loader.
  *
  * @author Jason van Zyl
