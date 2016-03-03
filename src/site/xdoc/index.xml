@@ -10,7 +10,7 @@
       <subsection name="Typical use">
         <p>A typical use:
         <source>
-VelocityContext context = new VelocityContext();        
+VelocityContext context = new VelocityContext();
 VelocityComponent velocityComponent =  (DefaultVelocityComponent) lookup( VelocityComponent.ROLE );
 Template template = velocity.getEngine().getTemplate( "path to your template" );
 StringWriter writer = new StringWriter();
@@ -28,10 +28,6 @@ template.merge( context, writer );
       <configuration>
         <properties>
           <property>
-            <name>runtime.log.logsystem.class</name>
-            <value>org.codehaus.plexus.velocity.Log4JLoggingSystem</value>
-          </property>        
-          <property>
             <name>resource.loader</name>
             <value>classpath</value>
           </property>
@@ -42,10 +38,10 @@ template.merge( context, writer );
         </properties>
       </configuration>
     </component>
-]]>  
+]]>
         </source>
         </p>
-      </subsection>      
+      </subsection>
     </section>
   </body>
 </document>

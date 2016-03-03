@@ -22,7 +22,7 @@ import java.util.Properties;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeServices;
 import org.apache.velocity.runtime.RuntimeConstants;
-import org.apache.velocity.runtime.log.LogSystem;
+import org.apache.velocity.runtime.log.LogChute;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
 import org.codehaus.plexus.logging.AbstractLogEnabled;
@@ -34,14 +34,6 @@ import org.codehaus.plexus.logging.AbstractLogEnabled;
  * <pre>
  *      <configuration>
  *        <properties>
- *          <property>
- *            <name>runtime.log.logsystem.class</name>
- *            <value>org.codehaus.plexus.velocity.Log4JLoggingSystem</value>
- *          </property>
- *          <property>
- *            <name>runtime.log.logsystem.log4j.category</name>
- *            <value>org.codehaus.plexus.velocity.DefaultVelocityComponentTest</value>
- *          </property>
  *          <property>
  *            <name>resource.loader</name>
  *            <value>classpath</value>
@@ -56,7 +48,7 @@ import org.codehaus.plexus.logging.AbstractLogEnabled;
  */
 public class DefaultVelocityComponent
     extends AbstractLogEnabled
-    implements VelocityComponent, Initializable, LogSystem
+    implements VelocityComponent, Initializable, LogChute
 {
     private VelocityEngine engine;
 
@@ -65,25 +57,25 @@ public class DefaultVelocityComponent
     // ----------------------------------------------------------------------
     //
     // ----------------------------------------------------------------------
-    
+
     public void initialize()
         throws InitializationException
     {
         engine = new VelocityEngine();
 
         // avoid "unable to find resource 'VM_global_library.vm' in any resource loader."
-        engine.setProperty( "velocimacro.library", "" );
+        engine.setProperty( RuntimeConstants.VM_LIBRARY, "" );
 
         engine.setProperty( RuntimeConstants.RUNTIME_LOG_LOGSYSTEM, this );
 
         if ( properties != null )
         {
-            for ( Enumeration e = properties.propertyNames(); e.hasMoreElements(); )
+            for ( Enumeration<?> e = properties.propertyNames(); e.hasMoreElements(); )
             {
                 String key = e.nextElement().toString();
-    
+
                 String value = properties.getProperty( key );
-    
+
                 engine.setProperty( key, value );
 
                 getLogger().debug( "Setting property: " + key + " => '" + value + "'." );
@@ -119,26 +111,67 @@ public class DefaultVelocityComponent
         this.runtimeServices = runtimeServices;
     }
 
-    public void logVelocityMessage( int level, String message )
+    public void log(int level, String message)
     {
         switch ( level )
         {
-            case LogSystem.WARN_ID:
+            case LogChute.WARN_ID:
                 getLogger().warn( message );
                 break;
-            case LogSystem.INFO_ID:
-                // velocity info messages are too verbose, just consider them as debug messages...
+            case LogChute.INFO_ID:
+                getLogger().info( message );
+                break;
+            case LogChute.DEBUG_ID:
+            case LogChute.TRACE_ID:
                 getLogger().debug( message );
                 break;
-            case LogSystem.DEBUG_ID:
-                getLogger().debug( message );
-                break;
-            case LogSystem.ERROR_ID:
+            case LogChute.ERROR_ID:
                 getLogger().error( message );
                 break;
             default:
                 getLogger().debug( message );
                 break;
+        }
+    }
+
+    public void log(int level, String message, Throwable t)
+    {
+        switch ( level )
+        {
+            case LogChute.WARN_ID:
+                getLogger().warn( message, t );
+                break;
+            case LogChute.INFO_ID:
+                getLogger().info( message, t );
+                break;
+            case LogChute.DEBUG_ID:
+            case LogChute.TRACE_ID:
+                getLogger().debug( message, t );
+                break;
+            case LogChute.ERROR_ID:
+                getLogger().error( message, t );
+                break;
+            default:
+                getLogger().debug( message, t );
+                break;
+        }
+    }
+
+    public boolean isLevelEnabled( int level )
+    {
+         switch ( level )
+        {
+            case LogChute.WARN_ID:
+                return getLogger().isWarnEnabled();
+            case LogChute.INFO_ID:
+                return getLogger().isInfoEnabled();
+            case LogChute.DEBUG_ID:
+            case LogChute.TRACE_ID:
+                return getLogger().isDebugEnabled();
+            case LogChute.ERROR_ID:
+                return getLogger().isErrorEnabled();
+            default:
+                return getLogger().isDebugEnabled();
         }
     }
 }
