@@ -41,6 +41,10 @@
             <name>eventhandler.include.class</name>
             <value>org.apache.velocity.app.event.implement.IncludeRelativePath</value>
           </property>
+          <property>
+            <name>velocimacro.permissions.allow.inline.to.replace.global</name>
+            <value>true</value>
+          </property>
         </properties>
       </configuration>
     </component>
