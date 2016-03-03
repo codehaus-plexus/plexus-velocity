@@ -88,7 +88,7 @@ public class DefaultVelocityComponent
         }
         catch ( Exception e )
         {
-            throw new InitializationException( "Cannot start the velocity engine: ", e );
+            throw new InitializationException( "Cannot start the Velocity engine", e );
         }
     }
 
