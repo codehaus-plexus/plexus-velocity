@@ -1,7 +1,7 @@
 package org.codehaus.plexus.velocity;
 
 /*
- * Copyright 2001-2006 Codehaus Foundation.
+ * Copyright 2001-2016 Codehaus Foundation.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
