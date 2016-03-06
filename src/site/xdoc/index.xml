@@ -1,12 +1,17 @@
-<document>
+<?xml version="1.0"?>
+
+<document xmlns="http://maven.apache.org/XDOC/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 https://maven.apache.org/xsd/xdoc-2.0.xsd">
   <properties>
     <title>Plexus Velocity Component</title>
     <author email="olamy@codehaus.org">Olivier Lamy</author>
   </properties>
   <body>
     <section name="Plexus Velocity Component">
-      <p>A component which provide <a href="http://velocity.apache.org/">Apache Velocity</a> rendering.</p>
-      <br/>
+      <p>A component which provides <a href="http://velocity.apache.org/">Apache Velocity</a> templating engine
+      integration.</p>
+
       <subsection name="Typical use">
         <p>A typical use:
         <source>
