@@ -23,11 +23,11 @@ under the License.
     <link>http://codehaus-plexus.github.io/plexus-components/plexus-velocity/</link>
     <description>Plexus Velocity Component - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2001 - 2015 Codehaus Plexus</copyright>
+    <copyright>&#169;2001 - 2016 Codehaus Plexus</copyright>
     <item>
       <title>File: 4,
-             Errors: 20,
-             Warnings: 17,
+             Errors: 24,
+             Warnings: 19,
              Infos: 1
       </title>
             <link>http://codehaus-plexus.github.io/plexus-components/plexus-velocity//checkstyle.html</link>
@@ -55,7 +55,7 @@ under the License.
                   7
                 </td>
                 <td>
-                  2
+                  3
                 </td>
               </tr>
                           <tr>
@@ -66,10 +66,10 @@ under the License.
                   0
                 </td>
                 <td>
-                  5
+                  7
                 </td>
                 <td>
-                  1
+                  5
                 </td>
               </tr>
                           <tr>
@@ -83,7 +83,7 @@ under the License.
                   1
                 </td>
                 <td>
-                  4
+                  3
                 </td>
               </tr>
                           <tr>
