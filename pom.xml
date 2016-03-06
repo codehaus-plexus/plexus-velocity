@@ -24,7 +24,7 @@ limitations under the License.
   </parent>
 
   <artifactId>plexus-velocity</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 
   <name>Plexus Velocity Component</name>
 
@@ -32,7 +32,7 @@ limitations under the License.
     <connection>scm:git:git@github.com:codehaus-plexus/plexus-velocity.git</connection>
     <developerConnection>scm:git:git@github.com:codehaus-plexus/plexus-velocity.git</developerConnection>
     <url>http://github.com/codehaus-plexus/plexus-velocity</url>
-    <tag>HEAD</tag>
+    <tag>plexus-velocity-1.2</tag>
   </scm>
   <issueManagement>
     <system>github</system>
