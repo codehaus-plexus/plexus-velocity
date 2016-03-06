@@ -12,7 +12,7 @@
         <source>
 VelocityContext context = new VelocityContext();
 VelocityComponent velocityComponent =  (DefaultVelocityComponent) lookup( VelocityComponent.ROLE );
-Template template = velocity.getEngine().getTemplate( "path to your template" );
+Template template = velocityComponent.getEngine().getTemplate( "path to your template" );
 StringWriter writer = new StringWriter();
 template.merge( context, writer );
         </source>
