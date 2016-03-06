@@ -18,6 +18,10 @@ package org.codehaus.plexus.velocity;
 
 import org.apache.velocity.app.VelocityEngine;
 
+/**
+ * The VelocityComponent API to access <a href="http://velocity.apache.org/engine/">Apache Velocity Engine</a>
+ * configured through Plexus.
+ */
 public interface VelocityComponent
 {
     public final static String ROLE = VelocityComponent.class.getName();
