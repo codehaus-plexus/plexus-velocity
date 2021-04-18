@@ -1,0 +1,2 @@
+_extends: .github
+tag-template: plexus-velocity-$NEXT_MINOR_VERSION
