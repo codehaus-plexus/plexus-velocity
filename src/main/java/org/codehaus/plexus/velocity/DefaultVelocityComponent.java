@@ -28,22 +28,23 @@ import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationExce
 import org.codehaus.plexus.logging.AbstractLogEnabled;
 
 /**
+ * <p>
  * A simple velocity component implementation.
- * <p/>
+ * </p>
  * A typical configuration will look like this:
  * <pre>
- *      <configuration>
- *        <properties>
- *          <property>
- *            <name>resource.loader</name>
- *            <value>classpath</value>
- *          </property>
- *          <property>
- *            <name>classpath.resource.loader.class</name>
- *            <value>org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader</value>
- *          </property>
- *        </properties>
- *      </configuration>
+ *      &lt;configuration&gt;
+ *        &lt;properties&gt;
+ *          &lt;property&gt;
+ *            &lt;name&gt;resource.loader&lt;/name&gt;
+ *            &lt;value&gt;classpath&lt;/value&gt;
+ *          &lt;/property&gt;
+ *          &lt;property&gt;
+ *            &lt;name&gt;classpath.resource.loader.class&lt;/name&gt;
+ *            &lt;value&gt;org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader&lt;/value&gt;
+ *          &lt;/property&gt;
+ *        &lt;/properties&gt;
+ *      &lt;/configuration&gt;
  * </pre>
  */
 public class DefaultVelocityComponent
