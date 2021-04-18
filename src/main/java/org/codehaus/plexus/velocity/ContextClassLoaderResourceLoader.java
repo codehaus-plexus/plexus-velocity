@@ -41,7 +41,7 @@ public class ContextClassLoaderResourceLoader
     public synchronized InputStream getResourceStream( String name )
         throws ResourceNotFoundException
     {
-        InputStream result = null;
+        InputStream result;
 
         if (name == null || name.length() == 0)
         {
