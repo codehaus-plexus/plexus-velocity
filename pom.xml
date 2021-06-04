@@ -21,6 +21,7 @@ limitations under the License.
     <artifactId>plexus-components</artifactId>
     <groupId>org.codehaus.plexus</groupId>
     <version>6.5</version>
+    <relativePath/>
   </parent>
 
   <artifactId>plexus-velocity</artifactId>
@@ -46,6 +47,7 @@ limitations under the License.
   </distributionManagement>
 
   <properties>
+    <slf4j.version>1.7.25</slf4j.version>
     <project.build.outputTimestamp>2020-01-20T18:52:37Z</project.build.outputTimestamp>
   </properties>
 
@@ -55,14 +57,20 @@ limitations under the License.
       <artifactId>plexus-container-default</artifactId>
     </dependency>
     <dependency>
-      <groupId>commons-collections</groupId>
-      <artifactId>commons-collections</artifactId>
-      <version>3.2.2</version>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity-engine-core</artifactId>
+      <version>2.0</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.velocity</groupId>
-      <artifactId>velocity</artifactId>
-      <version>1.7</version>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${slf4j.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
