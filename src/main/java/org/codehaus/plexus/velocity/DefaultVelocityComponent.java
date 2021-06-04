@@ -16,13 +16,10 @@ package org.codehaus.plexus.velocity;
  * limitations under the License.
  */
 
-import java.util.Enumeration;
 import java.util.Properties;
 
 import org.apache.velocity.app.VelocityEngine;
-import org.apache.velocity.runtime.RuntimeServices;
 import org.apache.velocity.runtime.RuntimeConstants;
-import org.apache.velocity.runtime.log.LogChute;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
 import org.codehaus.plexus.logging.AbstractLogEnabled;
@@ -49,7 +46,7 @@ import org.codehaus.plexus.logging.AbstractLogEnabled;
  */
 public class DefaultVelocityComponent
     extends AbstractLogEnabled
-    implements VelocityComponent, Initializable, LogChute
+    implements VelocityComponent, Initializable
 {
     private VelocityEngine engine;
 
@@ -63,24 +60,11 @@ public class DefaultVelocityComponent
         throws InitializationException
     {
         engine = new VelocityEngine();
-
         // avoid "unable to find resource 'VM_global_library.vm' in any resource loader."
         engine.setProperty( RuntimeConstants.VM_LIBRARY, "" );
-
-        engine.setProperty( RuntimeConstants.RUNTIME_LOG_LOGSYSTEM, this );
-
         if ( properties != null )
         {
-            for ( Enumeration<?> e = properties.propertyNames(); e.hasMoreElements(); )
-            {
-                String key = e.nextElement().toString();
-
-                String value = properties.getProperty( key );
-
-                engine.setProperty( key, value );
-
-                getLogger().debug( "Setting property: " + key + " => '" + value + "'." );
-            }
+            engine.setProperties( properties );
         }
 
         try
@@ -93,86 +77,9 @@ public class DefaultVelocityComponent
         }
     }
 
-    // ----------------------------------------------------------------------
-    //
-    // ----------------------------------------------------------------------
-
     public VelocityEngine getEngine()
     {
         return engine;
     }
-    // ----------------------------------------------------------------------
-    //
-    // ----------------------------------------------------------------------
 
-    private RuntimeServices runtimeServices;
-
-    public void init( RuntimeServices runtimeServices )
-    {
-        this.runtimeServices = runtimeServices;
-    }
-
-    public void log(int level, String message)
-    {
-        switch ( level )
-        {
-            case LogChute.WARN_ID:
-                getLogger().warn( message );
-                break;
-            case LogChute.INFO_ID:
-                getLogger().info( message );
-                break;
-            case LogChute.DEBUG_ID:
-            case LogChute.TRACE_ID:
-                getLogger().debug( message );
-                break;
-            case LogChute.ERROR_ID:
-                getLogger().error( message );
-                break;
-            default:
-                getLogger().debug( message );
-                break;
-        }
-    }
-
-    public void log(int level, String message, Throwable t)
-    {
-        switch ( level )
-        {
-            case LogChute.WARN_ID:
-                getLogger().warn( message, t );
-                break;
-            case LogChute.INFO_ID:
-                getLogger().info( message, t );
-                break;
-            case LogChute.DEBUG_ID:
-            case LogChute.TRACE_ID:
-                getLogger().debug( message, t );
-                break;
-            case LogChute.ERROR_ID:
-                getLogger().error( message, t );
-                break;
-            default:
-                getLogger().debug( message, t );
-                break;
-        }
-    }
-
-    public boolean isLevelEnabled( int level )
-    {
-         switch ( level )
-        {
-            case LogChute.WARN_ID:
-                return getLogger().isWarnEnabled();
-            case LogChute.INFO_ID:
-                return getLogger().isInfoEnabled();
-            case LogChute.DEBUG_ID:
-            case LogChute.TRACE_ID:
-                return getLogger().isDebugEnabled();
-            case LogChute.ERROR_ID:
-                return getLogger().isErrorEnabled();
-            default:
-                return getLogger().isDebugEnabled();
-        }
-    }
 }

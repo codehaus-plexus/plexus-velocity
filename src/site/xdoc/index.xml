@@ -16,7 +16,7 @@
         <p>A typical use:
         <source>
 VelocityContext context = new VelocityContext();
-VelocityComponent velocityComponent =  (DefaultVelocityComponent) lookup( VelocityComponent.ROLE );
+VelocityComponent velocityComponent =  (VelocityComponent) lookup( VelocityComponent.ROLE );
 Template template = velocityComponent.getEngine().getTemplate( "path to your template" );
 StringWriter writer = new StringWriter();
 template.merge( context, writer );</source>
@@ -45,7 +45,7 @@ template.merge( context, writer );</source>
       </configuration>
     </component>]]></source>
         </p>
-        <p>See <a href="http://velocity.apache.org/engine/releases/velocity-1.7/developer-guide.html#Velocity_Configuration_Keys_and_Values">Velocity Configuration Keys and Values</a>
+        <p>See <a href="https://velocity.apache.org/engine/2.0/configuration.html">Velocity Configuration</a>
         reference documentation for details on available configurations.</p>
       </subsection>
     </section>
