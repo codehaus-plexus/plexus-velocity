@@ -47,7 +47,7 @@ limitations under the License.
   </distributionManagement>
 
   <properties>
-    <slf4j.version>1.7.25</slf4j.version>
+    <slf4j.version>1.7.31</slf4j.version>
     <project.build.outputTimestamp>2021-07-03T10:45:32Z</project.build.outputTimestamp>
   </properties>
 
