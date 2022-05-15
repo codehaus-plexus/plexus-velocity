@@ -60,8 +60,6 @@ public class DefaultVelocityComponent
         throws InitializationException
     {
         engine = new VelocityEngine();
-        // avoid "unable to find resource 'VM_global_library.vm' in any resource loader."
-        engine.setProperty( RuntimeConstants.VM_LIBRARY, "" );
         if ( properties != null )
         {
             engine.setProperties( properties );

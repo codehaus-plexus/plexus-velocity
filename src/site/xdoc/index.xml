@@ -34,18 +34,18 @@ template.merge( context, writer );</source>
       <configuration>
         <properties>
           <property>
-            <name>resource.loader</name>
+            <name>resource.loaders</name>
             <value>classpath</value>
           </property>
           <property>
-            <name>classpath.resource.loader.class</name>
+            <name>resource.loader.classpath.class</name>
             <value>org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader</value>
           </property>
         </properties>
       </configuration>
     </component>]]></source>
         </p>
-        <p>See <a href="https://velocity.apache.org/engine/2.0/configuration.html">Velocity Configuration</a>
+        <p>See <a href="https://velocity.apache.org/engine/2.3/configuration.html">Velocity Configuration</a>
         reference documentation for details on available configurations.</p>
       </subsection>
     </section>
