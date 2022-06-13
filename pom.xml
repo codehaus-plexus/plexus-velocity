@@ -20,7 +20,7 @@ limitations under the License.
   <parent>
     <artifactId>plexus-components</artifactId>
     <groupId>org.codehaus.plexus</groupId>
-    <version>9.0</version>
+    <version>10.0</version>
     <relativePath />
   </parent>
 
