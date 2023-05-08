@@ -21,12 +21,17 @@ import java.io.StringWriter;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.codehaus.plexus.PlexusTestCase;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class DefaultVelocityComponentTest
     extends PlexusTestCase
 {
+    @Test
     public void testBasic()
-        throws Exception
+            throws Exception
     {
         DefaultVelocityComponent velocity;
 
@@ -34,7 +39,7 @@ public class DefaultVelocityComponentTest
 
         String value;
 
-        velocity = (DefaultVelocityComponent) lookup( VelocityComponent.ROLE );
+        velocity = lookup( VelocityComponent.ROLE );
 
         // test the properties
         value = (String) velocity.getEngine().getProperty( "hello" );
