@@ -16,15 +16,20 @@ package org.codehaus.plexus.velocity;
  * limitations under the License.
  */
 
-import org.apache.velocity.app.VelocityEngine;
+import javax.inject.Named;
+import javax.inject.Singleton;
 
-/**
- * The VelocityComponent API to access <a href="http://velocity.apache.org/engine/">Apache Velocity Engine</a>
- * configured through Plexus.
- */
-public interface VelocityComponent {
-    @Deprecated
-    String ROLE = VelocityComponent.class.getName();
+import java.util.Properties;
 
-    VelocityEngine getEngine();
+@Singleton
+@Named
+public class TestVelocityComponentConfigurator implements VelocityComponentConfigurator {
+    @Override
+    public void configure(Properties properties) {
+        properties.setProperty("resource.loaders", "classpath");
+        properties.setProperty(
+                "resource.loader.classpath.class",
+                "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
+        properties.setProperty("hello", "world");
+    }
 }

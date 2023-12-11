@@ -16,15 +16,14 @@ package org.codehaus.plexus.velocity;
  * limitations under the License.
  */
 
-import org.apache.velocity.app.VelocityEngine;
+import java.util.Properties;
 
 /**
- * The VelocityComponent API to access <a href="http://velocity.apache.org/engine/">Apache Velocity Engine</a>
- * configured through Plexus.
+ * The VelocityComponent configuration that may configure {@link java.util.Properties} prior having them used to init
+ * Velocity Engine. This component is optional, is not needed if default are sufficient.
+ *
+ * @since TBD
  */
-public interface VelocityComponent {
-    @Deprecated
-    String ROLE = VelocityComponent.class.getName();
-
-    VelocityEngine getEngine();
+public interface VelocityComponentConfigurator {
+    void configure(Properties properties);
 }
