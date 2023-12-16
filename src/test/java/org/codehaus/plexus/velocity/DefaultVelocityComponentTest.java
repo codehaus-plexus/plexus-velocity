@@ -20,45 +20,42 @@ import java.io.StringWriter;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
-import org.codehaus.plexus.PlexusTestCase;
+import org.eclipse.sisu.launch.InjectedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class DefaultVelocityComponentTest
-    extends PlexusTestCase
-{
+public class DefaultVelocityComponentTest extends InjectedTest {
     @Test
-    public void testBasic()
-            throws Exception
-    {
-        DefaultVelocityComponent velocity;
+    public void testBasic() {
+        VelocityComponent velocity;
 
         VelocityContext context;
 
         String value;
 
-        velocity = lookup( VelocityComponent.ROLE );
+        velocity = lookup(VelocityComponent.class);
 
         // test the properties
-        value = (String) velocity.getEngine().getProperty( "hello" );
+        value = (String) velocity.getEngine().getProperty("hello");
 
-        assertNotNull( value );
+        assertNotNull(value);
 
-        assertEquals( "world", value );
+        assertEquals("world", value);
 
         // test the rendering
         context = new VelocityContext();
 
-        context.put( "variable", "Value from context" );
+        context.put("variable", "Value from context");
 
-        Template template = velocity.getEngine().getTemplate("org/codehaus/plexus/velocity/DefaultVelocityComponentTest.vm" );
+        Template template =
+                velocity.getEngine().getTemplate("org/codehaus/plexus/velocity/DefaultVelocityComponentTest.vm");
 
         StringWriter writer = new StringWriter();
 
-        template.merge( context, writer );
+        template.merge(context, writer);
 
-        assertEquals( "Static text -- Value from context -- More static text", writer.toString() );
+        assertEquals("Static text -- Value from context -- More static text", writer.toString());
     }
 }
