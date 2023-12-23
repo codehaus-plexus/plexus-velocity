@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"org.codehaus.plexus.velocity","c":"DefaultVelocityComponentTest","l":"DefaultVelocityComponentTest()","url":"%3Cinit%3E()"},{"p":"org.codehaus.plexus.velocity","c":"DefaultVelocityComponentTest","l":"testBasic()"}]
