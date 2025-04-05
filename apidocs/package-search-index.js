@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.codehaus.plexus.velocity"},{"l":"org.codehaus.plexus.velocity.internal"}];updateSearchResults();
