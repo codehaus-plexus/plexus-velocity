@@ -25,7 +25,6 @@ import java.util.Properties;
 import org.apache.velocity.app.VelocityEngine;
 import org.codehaus.plexus.velocity.VelocityComponent;
 import org.codehaus.plexus.velocity.VelocityComponentConfigurator;
-import org.eclipse.sisu.Nullable;
 
 /**
  * Default component implementation. The presence of {@link VelocityComponentConfigurator} is optional.
