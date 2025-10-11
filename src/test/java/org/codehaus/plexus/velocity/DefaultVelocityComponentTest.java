@@ -16,36 +16,35 @@ package org.codehaus.plexus.velocity;
  * limitations under the License.
  */
 
+import javax.inject.Inject;
+
 import java.io.StringWriter;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
-import org.eclipse.sisu.launch.InjectedTest;
+import org.codehaus.plexus.testing.PlexusTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class DefaultVelocityComponentTest extends InjectedTest {
+@PlexusTest
+public class DefaultVelocityComponentTest {
+
+    @Inject
+    private VelocityComponent velocity;
+
     @Test
     public void testBasic() {
-        VelocityComponent velocity;
-
-        VelocityContext context;
-
-        String value;
-
-        velocity = lookup(VelocityComponent.class);
 
         // test the properties
-        value = (String) velocity.getEngine().getProperty("hello");
+        String value = (String) velocity.getEngine().getProperty("hello");
 
         assertNotNull(value);
-
         assertEquals("world", value);
 
         // test the rendering
-        context = new VelocityContext();
+        VelocityContext context = new VelocityContext();
 
         context.put("variable", "Value from context");
 
