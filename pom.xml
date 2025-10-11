@@ -28,6 +28,8 @@ limitations under the License.
   <version>2.2.2-SNAPSHOT</version>
 
   <name>Plexus Velocity Component</name>
+  <description>A component which provides Apache Velocity templating engine integration</description>
+  <url>https://codehaus-plexus.github.io/plexus-velocity/</url>
 
   <scm>
     <connection>scm:git:https://github.com/codehaus-plexus/plexus-velocity.git</connection>

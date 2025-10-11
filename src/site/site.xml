@@ -11,7 +11,6 @@
       <!--item name="FAQ" href="faq.html"/-->
     </menu>
 
-    <menu ref="parent"/>
     <menu ref="reports"/>
   </body>
 </site>
