@@ -9,7 +9,7 @@
   </properties>
   <body>
     <section name="Plexus Velocity Component">
-      <p>A component which provides <a href="http://velocity.apache.org/">Apache Velocity</a> templating engine
+      <p>A component which provides <a href="https://velocity.apache.org/">Apache Velocity</a> templating engine
       integration.</p>
 
       <subsection name="Typical use">
@@ -28,7 +28,7 @@ template.merge( context, writer );</source>
             <code>VelocityComponentConfigurator</code> component implementation. Presence of this component is
             optional.
         </p>
-        <p>See <a href="https://velocity.apache.org/engine/2.3/configuration.html">Velocity Configuration</a>
+        <p>See <a href="https://velocity.apache.org/engine/2.4.1/configuration.html">Velocity Configuration</a>
         reference documentation for details on available configurations.</p>
       </subsection>
     </section>
