@@ -55,6 +55,14 @@ limitations under the License.
 
   <dependencies>
     <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <!-- override version to avoid CVE-2025-48924 -->
+      <!-- can be removed when velocity upgrades its commons-lang3 dependency -->
+      <version>3.19.0</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.apache.velocity</groupId>
       <artifactId>velocity-engine-core</artifactId>
       <version>2.4.1</version>
