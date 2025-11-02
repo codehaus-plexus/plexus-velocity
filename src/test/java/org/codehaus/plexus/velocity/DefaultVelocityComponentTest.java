@@ -29,13 +29,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @PlexusTest
-public class DefaultVelocityComponentTest {
+class DefaultVelocityComponentTest {
 
     @Inject
     private VelocityComponent velocity;
 
     @Test
-    public void testBasic() {
+    void basic() {
 
         // test the properties
         String value = (String) velocity.getEngine().getProperty("hello");
