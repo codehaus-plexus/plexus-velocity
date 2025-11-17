@@ -59,7 +59,7 @@ limitations under the License.
       <artifactId>commons-lang3</artifactId>
       <!-- override version to avoid CVE-2025-48924 -->
       <!-- can be removed when velocity upgrades its commons-lang3 dependency -->
-      <version>3.19.0</version>
+      <version>3.20.0</version>
     </dependency>
 
     <dependency>
