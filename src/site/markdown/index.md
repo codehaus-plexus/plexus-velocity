@@ -1,36 +1,29 @@
-<?xml version="1.0"?>
+---
+title: Plexus Velocity Component
+author: Olivier Lamy
+---
 
-<document xmlns="http://maven.apache.org/XDOC/2.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 https://maven.apache.org/xsd/xdoc-2.0.xsd">
-  <properties>
-    <title>Plexus Velocity Component</title>
-    <author email="olamy@codehaus.org">Olivier Lamy</author>
-  </properties>
-  <body>
-    <section name="Plexus Velocity Component">
-      <p>A component which provides <a href="https://velocity.apache.org/">Apache Velocity</a> templating engine
-      integration.</p>
+# Plexus Velocity Component
 
-      <subsection name="Typical use">
-        <p>A typical use:
-        <source>
+A component which provides [Apache Velocity](https://velocity.apache.org/) templating engine integration.
+
+## Typical use
+
+A typical use:
+
+```java
 VelocityContext context = new VelocityContext();
 VelocityComponent velocityComponent = lookup( VelocityComponent.class );
 Template template = velocityComponent.getEngine().getTemplate( "path to your template" );
 StringWriter writer = new StringWriter();
-template.merge( context, writer );</source>
-        </p>
-      </subsection>
-      <subsection name="Typical Configuration">
-        <p>Plexus Velocity Component comes with a default configuration: it is
-        expected to be customized to match local specific need. This is done by creating
-            <code>VelocityComponentConfigurator</code> component implementation. Presence of this component is
-            optional.
-        </p>
-        <p>See <a href="https://velocity.apache.org/engine/2.4.1/configuration.html">Velocity Configuration</a>
-        reference documentation for details on available configurations.</p>
-      </subsection>
-    </section>
-  </body>
-</document>
+template.merge( context, writer );
+```
+
+## Typical Configuration
+
+Plexus Velocity Component comes with a default configuration: it is expected to be customized to match
+local specific need. This is done by creating `VelocityComponentConfigurator` component implementation.
+Presence of this component is optional.
+
+See [Velocity Configuration](https://velocity.apache.org/engine/2.4.1/configuration.html) reference
+documentation for details on available configurations.
