@@ -18,7 +18,6 @@ Maintained, quietly. It is a thin wrapper over Velocity; most changes here are V
 <dependency>
   <groupId>org.codehaus.plexus</groupId>
   <artifactId>plexus-velocity</artifactId>
-  <version>2.3.0</version>
 </dependency>
 ```
 
@@ -33,6 +32,8 @@ Template template = velocityComponent.getEngine().getTemplate( "path/to/template
 StringWriter writer = new StringWriter();
 template.merge( context, writer );
 ```
+
+Check the badge above for the current version.
 
 The default configuration is meant to be customised: provide a `VelocityComponentConfigurator`
 implementation and it will be picked up. It is optional. See the
