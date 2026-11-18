@@ -33,8 +33,6 @@ StringWriter writer = new StringWriter();
 template.merge( context, writer );
 ```
 
-Check the badge above for the current version.
-
 The default configuration is meant to be customised: provide a `VelocityComponentConfigurator`
 implementation and it will be picked up. It is optional. See the
 [Velocity configuration reference](https://velocity.apache.org/engine/2.4.1/configuration.html) for what
