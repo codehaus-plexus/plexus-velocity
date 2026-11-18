@@ -12,9 +12,11 @@ A component which provides [Apache Velocity](https://velocity.apache.org/) templ
 A typical use:
 
 ```java
+@Inject
+VelocityComponent velocityComponent;
+
 VelocityContext context = new VelocityContext();
-VelocityComponent velocityComponent = lookup( VelocityComponent.class );
-Template template = velocityComponent.getEngine().getTemplate( "path to your template" );
+Template template = velocityComponent.getEngine().getTemplate( "path/to/template.vm" );
 StringWriter writer = new StringWriter();
 template.merge( context, writer );
 ```

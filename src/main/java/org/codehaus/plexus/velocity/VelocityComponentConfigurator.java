@@ -22,7 +22,7 @@ import java.util.Properties;
  * The VelocityComponent configuration that may configure {@link java.util.Properties} prior having them used to init
  * Velocity Engine. This component is optional, is not needed if default are sufficient.
  *
- * @since TBD
+ * @since 2.1.0
  */
 public interface VelocityComponentConfigurator {
     void configure(Properties properties);
