@@ -25,5 +25,11 @@ import java.util.Properties;
  * @since 2.1.0
  */
 public interface VelocityComponentConfigurator {
+    /**
+     * Change the engine properties. The properties already hold the defaults of the component, which this method may
+     * override or remove.
+     *
+     * @param properties the properties used to initialize the engine
+     */
     void configure(Properties properties);
 }

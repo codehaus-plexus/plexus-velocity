@@ -19,12 +19,16 @@ package org.codehaus.plexus.velocity;
 import org.apache.velocity.app.VelocityEngine;
 
 /**
- * The VelocityComponent API to access <a href="http://velocity.apache.org/engine/">Apache Velocity Engine</a>
- * configured through Plexus.
+ * The VelocityComponent API to access <a href="https://velocity.apache.org/engine/">Apache Velocity Engine</a>
+ * configured through Plexus. The engine is created once and shared; its defaults can be changed with a
+ * {@link VelocityComponentConfigurator}.
  */
 public interface VelocityComponent {
     @Deprecated
     String ROLE = VelocityComponent.class.getName();
 
+    /**
+     * @return the shared engine, already initialized
+     */
     VelocityEngine getEngine();
 }
